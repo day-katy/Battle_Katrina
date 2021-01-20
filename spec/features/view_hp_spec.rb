@@ -1,9 +1,6 @@
 feature 'viewing HPs' do
   scenario ' ' do
-    visit('/')
-    fill_in("player_1_name", with: "Katy")
-    fill_in('player_2_name', with: 'Katrina')
-    click_button("Let's Battle!")
+    sign_in_and_play
     expect(page).to have_content('Katy: 100HP!')
     expect(page).to have_content('Katrina: 100HP!')
   end

@@ -2,7 +2,7 @@ require 'sinatra'
 
 class Battle < Sinatra::Base
   get '/' do
-    'Hello Katy!'
+    'Testing infrastructure working!'
   end
   
 end

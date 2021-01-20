@@ -1,5 +1,5 @@
 feature 'adding player names' do
-  scenario ' ' do
+  scenario 'Can input player names and return start battle!' do
     visit('/')
     fill_in("player_1_name", with: "Katy")
     fill_in('player_2_name', with: 'Katrina')

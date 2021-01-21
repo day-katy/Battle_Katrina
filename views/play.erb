@@ -2,4 +2,8 @@
 <h1><%= @player_2_name %> has entered the battle!</h1>
 
 <%= @player_1_name %>: 100HP! </br>
-<%= @player_2_name %>: 100HP!
+<%= @player_2_name %>: 100HP!</br>
+
+<form action="/attack" method="get">
+  <input type="submit" value="Attack!">
+  </form>

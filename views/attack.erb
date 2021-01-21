@@ -1,6 +1,6 @@
-<b><%= @player_1.name %></b> has shanked <b><%= @player_2.name %></b>!</br>
+<b><%= @game.player_1.name %></b> has shanked <b><%= @game.player_2.name %></b>!</br>
 </br>
-Due to <b>copious</b> blood loss, <%=@player_2.name%> has lost 10HP!</br>
+Due to <b>copious</b> blood loss, <%=@game.player_2.name%> has lost 10HP!</br>
 
 <form action="/play" method="get">
   <input type="submit" value="OK">

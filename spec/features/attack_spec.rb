@@ -18,4 +18,11 @@ feature "attacking a player" do
     expect(page).to have_content("Katrina: 90HP!")
   end
 
+  scenario 'be attacked by player 2' do
+    sign_in_and_play
+    click_button("Attack!")
+    click_button("OK")
+    click_button("Attack!")
+    exepct(page).to have_content("Katrina has shanked Katy!")
+  end
 end

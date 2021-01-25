@@ -20,4 +20,8 @@ class Game
     player.take_damage
   end
 
+  def switch_turn
+    @current_turn == player_1 ? @current_turn = player_2 : @current_turn = player_1
+  end
+  
 end

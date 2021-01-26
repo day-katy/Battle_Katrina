@@ -23,7 +23,7 @@ class Game
   end
 
   def switch_turns
-    @current_turn == opponent_of(current_turn)
+    @current_turn = opponent_of(current_turn)
   end
 
   def opponent_of(player)
@@ -32,6 +32,10 @@ class Game
 
   def game_over?
     losing_players.any?
+  end
+
+  def loser
+    losing_players.first
   end
 
   private

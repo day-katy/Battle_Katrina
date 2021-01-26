@@ -53,8 +53,8 @@ h1 {
 <h2><%= @game.player_1.name %> has entered the battle!</h2>
 <h2><%= @game.player_2.name %> has entered the battle!</h2>
 
-<h2><%= @game.player_1.name %>: <%=@game.player_1.health%>HP! </br></h2>
-<h2><%= @game.player_2.name %>: <%=@game.player_2.health%>HP!</br></h2>
+<h2><%= @game.player_1.name %>: <%=@game.player_1.hit_points%>HP! </br></h2>
+<h2><%= @game.player_2.name %>: <%=@game.player_2.hit_points%>HP!</br></h2>
 
 <form action="/attack" method="get">
   <input type="submit" value="Attack!">

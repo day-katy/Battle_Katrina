@@ -1,9 +1,12 @@
-require 'sinatra'
-require_relative './lib/player'
-require_relative './lib/game'
+require 'sinatra/base'
+require './helpers/attack_helper'
+require './lib/player'
+require './lib/game'
+require './lib/attack'
 
 class Battle < Sinatra::Base
   enable :sessions
+  helpers AttackHelper
 
   get '/' do
     erb(:index)
@@ -21,20 +24,28 @@ class Battle < Sinatra::Base
     erb(:begin_play)
   end
 
-get '/attack' do
-    @game = $game
-    @game.attack(@game.player_2)
-    erb(:attack)
-  end
-
-  post '/swtich-turn' do
-    $game.switch_turn
-    redirect '/play'
-  end
-  
   get '/play' do
     @game = $game
     erb(:play)
+  end
+
+  post '/attack' do
+    attack_and_redirect($game)
+  end
+
+get '/attack' do
+    @game = $game
+    erb(:attack)
+  end
+
+  post '/swtich-turns' do
+    $game.switch_turns
+    redirect '/play'
+  end
+
+  get '/game-over' do
+    @game = $game
+    erb(:game_over)
   end
 
 run! if app_file == $0

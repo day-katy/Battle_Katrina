@@ -49,13 +49,14 @@ h1 {
       }
     </style>
 </head>
-<% if @game.current_turn == @game.player_2.name %>
+<% if @game.current_turn == @game.player_1 %>
 <h1><b><%= @game.player_1.name %></b> has shanked <b><%= @game.player_2.name %></b>!</br></h1>
+<h2>Due to <b>copious</b> blood loss, <%=@game.player_1.name%> has lost 10HP!</br></h2>
 <% else %>
 <h1><b><%= @game.player_2.name %></b> has shanked <b><%= @game.player_1.name %></b>!</br></h1>
 </br>
 <h2>Due to <b>copious</b> blood loss, <%=@game.player_2.name%> has lost 10HP!</br></h2>
-
-<form action="/switch-turns" method="post">
+<% end %>
+<form action="/switch-turn" method="post">
   <input type="submit" value="OK">
   </form>

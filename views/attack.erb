@@ -35,11 +35,13 @@ h1 {
 <body>
 
 <% if @game.current_turn == @game.player_1 %>
-<h1><b><%= @game.player_1.name %></b> has shanked <b><%= @game.player_2.name %></b>!</br></h1>
+<h1><%= @game.player_1.name %> has shanked <%= @game.player_2.name %>!</br></h1>
 <% else %>
-<h1><b><%= @game.player_2.name %></b> has shanked <b><%= @game.player_1.name %></b>!</br></h1>
-</br>
+<h1><%= @game.player_2.name %> has shanked <%= @game.player_1.name %>!</br></h1>
 <% end %>
+
+</br>
+
 <form action="/switch-turns" method="post">
   <input type="submit" value="OK">
   </form>
